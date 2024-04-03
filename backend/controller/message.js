@@ -34,9 +34,9 @@ const sendMessage = async (req, res) => {
     }
     await chat.save();
 
-    res.status(200).json({ msg: " message send  successfully!" });
+    res.status(200).send(newMessage)
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).send(error)
   }
 };
 
@@ -49,10 +49,10 @@ const getMessage = async (req , res) => {
         participants: { $all: [senderId, receiverId] },
       }).populate('messages');
 
-      if(!chat) res.status(200).send([]);
+      if(!chat) return res.status(200).send([]);
       res.status(200).send(chat.messages);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).send(error)
     }
 }
 

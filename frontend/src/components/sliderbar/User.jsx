@@ -1,15 +1,26 @@
 import React from "react";
+import useConversation from "../../zustand/useConversion";
 
-export const User = () => {
+export const User = ({user}) => {
+  // console.log("my id" , user);
+  const { selectedConversation, setSelectedConversation } = useConversation();
+  const isSelected = selectedConversation?._id === user._id;
   return (
     <>
-      <div className="flex flex-row">
+      <div
+        className={`flex flex-row hover:bg-sky-500 ${
+          isSelected ? "bg-sky-500" : ""
+        }`}
+        onClick={() => setSelectedConversation(user)}
+      >
         <div className="avatar online">
           <div className="w-12 rounded-full">
-            <img src="https://avatar.iran.liara.run/public/boy?username=hetsi" />
+            <img src={user.avatar} />
           </div>
         </div>
-        <h2 className="text-base ml-4 font-bold text-teal-500">Meshv Patel</h2>
+        <h2 className="text-base ml-4 font-bold text-white">
+          {user.username}
+        </h2>
       </div>
     </>
   );

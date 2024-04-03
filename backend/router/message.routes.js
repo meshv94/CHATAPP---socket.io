@@ -3,7 +3,7 @@ const { sendMessage , getMessage } = require('../controller/message');
 const protectRoute = require('../middleware/protectRoute');
 const router = express.Router()
 
-router.get('/:id' , protectRoute , getMessage)
+router.post('/:id' , protectRoute , getMessage)
 router.post('/send/:id' , protectRoute ,sendMessage)
 
 module.exports = router;

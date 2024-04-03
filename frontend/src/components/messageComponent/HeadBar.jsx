@@ -1,47 +1,28 @@
 import React from "react";
 
-export const HeadBar = () => {
+export const HeadBar = (selectedConversation) => {
+  // console.log("head", selectedConversation);
   return (
     <>
-      <div className="navbar bg-base-100 fixed top-0 right-0 w-4/5 z-50">
+      <div className="navbar bg-base-100 z-50 fixed top-0">
+        <div className="w-11 rounded-full">
+          <img
+            alt="Tailwind CSS Navbar component"
+            src={selectedConversation.user.avatar}
+          />
+        </div>
         <div className="flex-1">
-          <p className="text-xl ml-4 font-bold text-teal-500">Meshv Patel</p>
+          <p className="text-xl ml-4 font-bold text-white">
+            {selectedConversation.user.username}
+          </p>
         </div>
         <div className="flex-none gap-2">
           <div className="form-control">
             <input
               type="text"
               placeholder="Search"
-              className="input input-bordered w-24 md:w-auto"
+              className="input input-bordered w-24 md:w-40"
             />
-          </div>
-          <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://avatar.iran.liara.run/public/boy?username=1"
-                />
-              </div>
-            </div>
-            <ul
-              tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

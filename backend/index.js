@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(cors({
     origin: "*", // reflecting the request header
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: ['GET' , "POST"],
 }))
 
 app.use("/api/auth", auth_router)
