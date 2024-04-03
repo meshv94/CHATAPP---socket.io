@@ -48,8 +48,8 @@ export const Register = () => {
 
   return (
     <>
-      <div className="w-2/6 bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 flex flex-col justify-items-center align-middle text-center p-6">
-        <h1 className="text-3xl font-bold text-white p-4">
+      <div className="w-11/12 sm:w-2/6 bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 flex flex-col justify-items-center align-middle text-center p-6">
+        <h1 className="text-2xl font-bold text-white p-4">
           SignUp
           <span className="text-blue-600 ml-2">ChatApp</span>
         </h1>
@@ -91,7 +91,7 @@ export const Register = () => {
           />
 
           <div className="flex p-3">
-            Male :
+            Male
             <input
               type="radio"
               value={"male"}
@@ -100,7 +100,7 @@ export const Register = () => {
               name="radio-2"
               className="radio radio-primary mx-2"
             />
-            Female :
+            Female
             <input
               type="radio"
               value={"female"}
@@ -127,6 +127,7 @@ export const Register = () => {
             </svg>
             <input
               type="password"
+              placeholder="password"
               onChange={(e) => setData({ ...data, password: e.target.value })}
               className="grow"
               value={data.password}

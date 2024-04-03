@@ -43,8 +43,8 @@ export const Login = () => {
 
   return (
     <>
-      <div className="h-2/5 w-2/6 bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 flex flex-col justify-items-center align-middle text-center p-6">
-        <h1 className="text-3xl font-bold text-white p-4">
+      <div className=" w-4/5 sm:w-2/6 bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 flex flex-col justify-items-center align-middle text-center p-6">
+        <h1 className="text-2xl font-bold text-white p-4">
           Login
           <span className="text-blue-600 ml-2">ChatApp</span>
         </h1>

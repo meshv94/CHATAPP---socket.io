@@ -42,16 +42,19 @@ export const MesageInput = () => {
   };
   return (
     <>
-      <div className="z-50 w-full fixed bottom-0">
-        <form onSubmit={handleSubmit} className="w-4/5">
+      <div className="z-10 w-full mb-2">
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Type here"
-            className="input input-bordered w-4/6 "
+            className="input input-bordered w-4/5 rounded-none"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <button type="submit" className="btn btn-outline btn-info w-1/6">
+          <button
+            type="submit"
+            className="btn btn-outline btn-info w-1/5 rounded-none"
+          >
             Send
           </button>
         </form>

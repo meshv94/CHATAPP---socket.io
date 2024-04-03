@@ -1,6 +1,7 @@
 const chatModel = require("../model/chat.model");
 const MessageModel = require("../model/message.model");
 const mongoose = require("mongoose");
+const { getRecieverSocketId , io } = require("../socket/socket");
 
 const sendMessage = async (req, res) => {
   // console.log("user" , req.user)
@@ -33,6 +34,12 @@ const sendMessage = async (req, res) => {
       chat.messages.push(newMessage._id);
     }
     await chat.save();
+
+    // socket io implimentation here
+    const recieverSocketId = getRecieverSocketId(receiverId)
+    if(recieverSocketId){
+      io.to(recieverSocketId).emit('newMessage', newMessage)
+    }
 
     res.status(200).send(newMessage)
   } catch (error) {

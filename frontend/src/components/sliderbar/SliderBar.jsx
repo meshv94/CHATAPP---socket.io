@@ -50,12 +50,16 @@ export const SliderBar = () => {
           {/* Page content here */}
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-active drawer-button lg:hidden h-16 place-self-start"
+            className="btn btn-active drawer-button lg:hidden w-1/5 h-svh rounded-none place-self-start fixed top-0 left-0 bg-base-100"
           >
-            <img src="https://cdn-icons-png.flaticon.com/128/10890/10890008.png" />
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/10890/10890008.png"
+              width={20}
+              height={10}
+            />
           </label>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side z-50">
           <label
             htmlFor="my-drawer-2"
             aria-label="close sidebar"
@@ -98,20 +102,22 @@ export const SliderBar = () => {
                   );
                 }
               })}
+            <li>
+              <button
+                className="btn btn-active h-20 flex flex-row p-1 mt-3 hover:bg-sky-500"
+                onClick={logout}
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/1286/1286907.png"
+                  alt="logout"
+                  width={23}
+                />
+                <p className="self-center text-base font-bold text-white">
+                  Logout
+                </p>
+              </button>
+            </li>
           </ul>
-          <button
-            className="btn h-20 flex justify-center align-middle fixed bottom-0 left-0 p-4 m-5 self-center w-1/6"
-            onClick={logout}
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/1286/1286907.png"
-              alt="logout"
-              width={50}
-              height={30}
-              className="mx-5"
-            />
-            <p className="text-xl self-center"> Logout</p>
-          </button>
         </div>
       </div>
     </>
